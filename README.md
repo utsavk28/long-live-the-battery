@@ -83,11 +83,10 @@ With its use seen in critical areas of safety and security, it is essential for 
 3. [A RoadMap to Time-Series Analysis](https://medium.com/featurepreneur/a-roadmap-for-time-series-analysis-3faf49b2126)
 
 ### Papers 
-1. [To Charge or To Sell? EV Pack Useful Life Estimation via LSTMs and Autoencoders](https://arxiv.org/abs/2110.03585)
-2. [A review of lithium-ion battery state of charge estimation and management system in electric vehicle applications: Challenges and recommendations](https://www.sciencedirect.com/science/article/abs/pii/S1364032117306275)
-3. [Remaining Useful Life Prediction and State of Health Diagnosis of Lithium-Ion Battery Based on Second-Order Central Difference Particle Filter](https://ieeexplore.ieee.org/document/9000971)
-4. [Data-Driven Remaining Useful Life Prediction for Lithium-Ion Batteries Using Multi-Charging Profile Framework: A Recurrent Neural Network Approach](https://www.mdpi.com/2071-1050/13/23/13333)
-5. [Novel Statistical Analysis Approach for Remaining Useful Life Prediction of Lithium-Ion Battery](https://ieeexplore.ieee.org/document/9579982)
+1. [A review of lithium-ion battery state of charge estimation and management system in electric vehicle applications: Challenges and recommendations](https://www.sciencedirect.com/science/article/abs/pii/S1364032117306275)
+2. [Remaining Useful Life Prediction and State of Health Diagnosis of Lithium-Ion Battery Based on Second-Order Central Difference Particle Filter](https://ieeexplore.ieee.org/document/9000971)
+3. [Data-Driven Remaining Useful Life Prediction for Lithium-Ion Batteries Using Multi-Charging Profile Framework: A Recurrent Neural Network Approach](https://www.mdpi.com/2071-1050/13/23/13333)
+4. [Novel Statistical Analysis Approach for Remaining Useful Life Prediction of Lithium-Ion Battery](https://ieeexplore.ieee.org/document/9579982)
 
 
 ### RUL Prediction Code 
