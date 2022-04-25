@@ -1,6 +1,10 @@
 # RUL-Prediction-for-Li-ion-Batteries
 With its use seen in critical areas of safety and security, it is essential for lithium-ion batteries to be reliable. Prediction of the Remaining Useful Life (RUL) can give insights into the health of the battery. Variations of Recurrent Neural Networks (RNN) are employed to learn the capacity degradation trajectories of lithium-ion batteries. Using several regressor models as the baseline, an ensemble of RNNs is created to overcome the shortcomings of one RNN over the other. The critical point approach and the data-driven approach for regressor models and neural network models respectively help predict the RUL. 
 
+
+## Report :
+[Project Report](https://github.com/utsavk28/RUL-Prediction-for-Li-ion-Batteries/blob/main/Project_Report.pdf)
+
 ## Results :
 
 ### Various RNN Model Results :
@@ -71,7 +75,6 @@ With its use seen in critical areas of safety and security, it is essential for 
  <tr><td>&nbsp;</td><td>Experiment 9_LGBMRegressor</td><td>0.04493</td><td>0.124974</td><td>0.031858</td></tr>
 </tbody></table>
 
-## Report :
 
 ## References :
 ### Time Series :
