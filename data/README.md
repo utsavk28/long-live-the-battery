@@ -1,6 +1,36 @@
 # Data
+## Dataset
+## Dataset Overview
+The dataset has been collected from a custom-built battery prognostics tested at the NASA Ames Prognostics Center of Excellence. The Lithium-ion batteries were run through 2 different operational profiles (charging and discharging) at different temperatures. The experiments were stopped when the batteries reached the end-of-life (EOL) criteria of 30% fade in rated capacity (from 2 Ah to 1.4 Ah)
+### Dataset Structure
+##### Charge
+1. Voltage_measured: Battery terminal voltage (Volts)
+2. Current_measured: Battery output current (Amps)
+3. Temperature_measured: Battery temperature (degree C)
+4. Current_charge: Current measured at charger (Amps)
+5. Voltage_charge: Voltage measured at charger (Volts)
+6. Time: Time vector for the cycle (secs)
+
+##### Discharge
+1. Voltage_measured: Battery terminal voltage (Volts)
+2. Current_measured: Battery output current (Amps)
+3. Temperature_measured: Battery temperature (degree C)
+4. Current_charge: Current measured at load (Amps)
+5. Voltage_charge: Voltage measured at load (Volts)
+6. Time: Time vector for the cycle (secs)
+7. Capacity: Battery capacity (Ahr) for discharge till 2.7V
+
+##### Impedance
+1. Sense_current: Current in sense branch (Amps)
+2. Battery_current: Current in battery branch (Amps)
+3. Current_ratio: Ratio of the above currents
+4. Battery_impedance: Battery impedance (Ohms) computed from raw data
+5. Rectified_impedance: Calibrated and smoothed battery impedance (Ohms)
+6. Re: Estimated electrolyte resistance (Ohms)
+7. Rct: Estimated charge transfer resistance (Ohms)
 
 
+## Folder Structure & Files
 ```
 📁 data/
 ├─📁 input/
