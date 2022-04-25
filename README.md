@@ -2,45 +2,62 @@
 With its use seen in critical areas of safety and security, it is essential for lithium-ion batteries to be reliable. Prediction of the Remaining Useful Life (RUL) can give insights into the health of the battery. Variations of Recurrent Neural Networks (RNN) are employed to learn the capacity degradation trajectories of lithium-ion batteries. Using several regressor models as the baseline, an ensemble of RNNs is created to overcome the shortcomings of one RNN over the other. The critical point approach and the data-driven approach for regressor models and neural network models respectively help predict the RUL. 
 
 ## Results :
-| Experiment   | Model  | Training RMSE | Testing RMSE | Validation RMSE |
-| ------------ | ------ | ------------- | ------------ | --------------- |
-| Experiment 1 | LSTM   | 0.0312        | 0.0304       | 0.0311          |
-| BiLSTM       | 0.287  | 0.2792        | 0.3259       |
-| GRU          | 0.0278 | 0.0342        | 0.0356       |
-| BiGRU        | 0.0901 | 0.0945        | 0.1059       |
-| Experiment 2 | LSTM   | 0.019         | 0.0173       | 0.0122          |
-| BiLSTM       | 0.5521 | 0.1376        | 0.4871       |
-| GRU          | 0.0962 | 0.0868        | 0.1957       |
-| BiGRU        | 1.568  | 1.3482        | 1.7741       |
-| Experiment 3 | LSTM   | 0.0183        | 0.0336       | 0.0542          |
-| BiLSTM       | 0.107  | 0.1108        | 0.1237       |
-| GRU          | 0.029  | 0.0425        | 0.0516       |
-| BiGRU        | 0.034  | 0.0454        | 0.053        |
-| Experiment 4 | LSTM   | 0.0248        | 0.0236       | 0.0232          |
-| BiLSTM       | 0.2583 | 0.2232        | 0.1943       |
-| GRU          | 0.0152 | 0.0242        | 0.0452       |
-| BiGRU        | 0.2186 | 0.2282        | 0.1775       |
-| Experiment 5 | LSTM   | 0.0145        | 0.0981       | 0.1329          |
-| BiLSTM       | 1.2602 | 1.1037        | 0.9943       |
-| GRU          | 0.0253 | 0.0811        | 0.1761       |
-| BiGRU        | 0.3437 | 0.4544        | 0.4535       |
-| Experiment 6 | LSTM   | 0.0123        | 0.0189       | 0.0277          |
-| BiLSTM       | 0.7338 | 0.6262        | 0.6111       |
-| GRU          | 0.0967 | 0.1094        | 0.2436       |
-| BiGRU        | 0.138  | 0.2562        | 0.2627       |
-| Experiment 7 | LSTM   | 0.0132        | 0.0253       | 0.0245          |
-| BiLSTM       | 0.2486 | 0.3564        | 0.3278       |
-| GRU          | 0.0578 | 0.0645        | 0.0689       |
-| BiGRU        | 0.1896 | 0.2486        | 0.2156       |
-| Experiment 8 | LSTM   | 0.0226        | 0.0356       | 0.0312          |
-| BiLSTM       | 0.227  | 0.2792        | 0.4123       |
-| GRU          | 0.0156 | 0.0236        | 0.0384       |
-| BiGRU        | 0.0689 | 0.1562        | 0.1047       |
-| Experiment 9 | LSTM   | 0.0196        | 0.0265       | 0.0241          |
-| BiLSTM       | 0.3568 | 0.3956        | 0.4256       |
-| GRU          | 0.0452 | 0.0546        | 0.0514       |
-| BiGRU        | 0.0918 | 0.1256        | 0.1298       |
-
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Experiment</th><th>Model</th><th>Training RMSE</th><th>Testing RMSE</th><th>Validation RMSE</th></tr></thead><tbody>
+ <tr><td>Experiment 1</td><td>LSTM</td><td>0.0312</td><td>0.0304</td><td>0.0311</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.287</td><td>0.2792</td><td>0.3259</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0278</td><td>0.0342</td><td>0.0356</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.0901</td><td>0.0945</td><td>0.1059</td></tr>
+ <tr><td>Experiment 2</td><td>LSTM</td><td>0.019</td><td>0.0173</td><td>0.0122</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.5521</td><td>0.1376</td><td>0.4871</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0962</td><td>0.0868</td><td>0.1957</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>1.568</td><td>1.3482</td><td>1.7741</td></tr>
+ <tr><td>Experiment 3</td><td>LSTM</td><td>0.0183</td><td>0.0336</td><td>0.0542</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.107</td><td>0.1108</td><td>0.1237</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.029</td><td>0.0425</td><td>0.0516</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.034</td><td>0.0454</td><td>0.053</td></tr>
+ <tr><td>Experiment 4</td><td>LSTM</td><td>0.0248</td><td>0.0236</td><td>0.0232</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.2583</td><td>0.2232</td><td>0.1943</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0152</td><td>0.0242</td><td>0.0452</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.2186</td><td>0.2282</td><td>0.1775</td></tr>
+ <tr><td>Experiment 5</td><td>LSTM</td><td>0.0145</td><td>0.0981</td><td>0.1329</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>1.2602</td><td>1.1037</td><td>0.9943</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0253</td><td>0.0811</td><td>0.1761</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.3437</td><td>0.4544</td><td>0.4535</td></tr>
+ <tr><td>Experiment 6</td><td>LSTM</td><td>0.0123</td><td>0.0189</td><td>0.0277</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.7338</td><td>0.6262</td><td>0.6111</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0967</td><td>0.1094</td><td>0.2436</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.138</td><td>0.2562</td><td>0.2627</td></tr>
+ <tr><td>Experiment 7</td><td>LSTM</td><td>0.0132</td><td>0.0253</td><td>0.0245</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.2486</td><td>0.3564</td><td>0.3278</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0578</td><td>0.0645</td><td>0.0689</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.1896</td><td>0.2486</td><td>0.2156</td></tr>
+ <tr><td>Experiment 8</td><td>LSTM</td><td>0.0226</td><td>0.0356</td><td>0.0312</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.227</td><td>0.2792</td><td>0.4123</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0156</td><td>0.0236</td><td>0.0384</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.0689</td><td>0.1562</td><td>0.1047</td></tr>
+ <tr><td>Experiment 9</td><td>LSTM</td><td>0.0196</td><td>0.0265</td><td>0.0241</td></tr>
+ <tr><td>&nbsp;</td><td>BiLSTM</td><td>0.3568</td><td>0.3956</td><td>0.4256</td></tr>
+ <tr><td>&nbsp;</td><td>GRU</td><td>0.0452</td><td>0.0546</td><td>0.0514</td></tr>
+ <tr><td>&nbsp;</td><td>BiGRU</td><td>0.0918</td><td>0.1256</td><td>0.1298</td></tr>
+</tbody></table>
 
 ## Report :
 
