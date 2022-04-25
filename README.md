@@ -10,7 +10,8 @@
 
 ### Papers :
 1. [Novel Statistical Analysis Approach for Remaining Useful Life Prediction of Lithium-Ion Battery](https://ieeexplore.ieee.org/document/9579982)
-2. [Transformer Network for Remaining Useful Life Prediction of Lithium-Ion Batteries](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9714323)
+2. [To Charge or To Sell? EV Pack Useful Life Estimation via LSTMs and Autoencoders](https://arxiv.org/abs/2110.03585)
+3. [Transformer Network for Remaining Useful Life Prediction of Lithium-Ion Batteries](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9714323)
 
 
 ### RUL Prediction Code :
