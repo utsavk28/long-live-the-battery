@@ -1,14 +1,7 @@
-from sklearn.model_selection import train_test_split
-import os
 import numpy as np
 import pandas as pd
+import os
 from scipy.io import loadmat
-
-
-def to_padded_numpy(l, shape):
-    padded_array = np.zeros(shape)
-    padded_array[:len(l)] = l
-    return padded_array
 
 
 def preprocess_data_to_cycles():
@@ -101,7 +94,6 @@ def get_exp_based_df(exp):
         df_all = pd.concat([df_all, df], ignore_index=True)
 
     df = df_all.reset_index(drop=True)
-    df
 
     for i, j in enumerate(df['Capacity']):
         try:
@@ -112,14 +104,69 @@ def get_exp_based_df(exp):
         except:
             pass
 
+    # CRITICAL TIME POINTS FOR A CYCLE
+    # We will only these critical points for furthur training
+
+    # TEMPERATURE_MEASURED
+    # => Time at highest temperature
+
+    # VOLTAGE_MEASURED
+    # => Time at lowest Voltage
+
+    # VOLTAGE_LOAD
+    # => First time it drops below 1 volt after 1500 time
+
+    def getTemperatureMeasuredCritical(tm, time):
+        high = 0
+        critical = 0
+        for i in range(len(tm)):
+            if (tm[i] > high):
+                high = tm[i]
+                critical = time[i]
+        return critical
+
+    def getVoltageMeasuredCritical(vm, time):
+        low = 1e9
+        critical = 0
+        for i in range(len(vm)):
+            if (vm[i] < low):
+                low = vm[i]
+                critical = time[i]
+        return critical
+
+    def getVoltageLoadCritical(vl, time):
+        for i in range(len(vl)):
+            if (time[i] > 1500 and vl[i] < 1):
+                return time[i]
+        return -1
+
+    def fun(x):
+        cap = x['Capacity']
+        amb_temp = x['ambient_temperatures']
+        volt_load_c = getVoltageLoadCritical(x['Voltage_load'], x['Time'])
+        volt_meas_c = getVoltageMeasuredCritical(
+            x['Voltage_measured'], x['Time'])
+        temp_meas_c = getTemperatureMeasuredCritical(
+            x['Temperature_measured'], x['Time'])
+
+        data = {
+            'Capacity': cap,
+            'ambient_temperatures': amb_temp,
+            'Critical_Voltage_load': volt_load_c,
+            'Critical_Voltage_measured': volt_meas_c,
+            'Critical_Temperature_measured': temp_meas_c,
+        }
+        data_idx = [
+            'Capacity', 'ambient_temperatures', 'Critical_Voltage_load',
+            'Critical_Voltage_measured', 'Critical_Temperature_measured',
+        ]
+        y = pd.Series(data, index=data_idx)
+
+        return y
+
+    df = df.apply(lambda x: fun(x), axis=1)
+
     df_x = df.drop(columns=['Capacity', 'ambient_temperatures']).values
     df_y = df['Capacity'].values
 
-    n, m = df_x.shape[0], df_x.shape[1]
-    temp2 = np.zeros((n, m, max_len))
-    for i in range(n):
-        for j in range(m):
-            temp2[i][j] = to_padded_numpy(df_x[i][j], max_len)
-
-    df_x = temp2
     return df_x, df_y

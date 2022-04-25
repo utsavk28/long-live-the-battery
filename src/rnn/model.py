@@ -7,7 +7,7 @@ from tensorflow.keras import layers, regularizers
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, Input
 from tensorflow.keras.layers import LSTM, GRU, Bidirectional
-from config import *
+from rnn.config import *
 
 
 class RNNLayers(layers.Layer):

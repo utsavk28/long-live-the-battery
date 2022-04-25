@@ -1,6 +1,5 @@
 import pandas as pd
-from config import *
-from preprocess import get_exp_based_df
+from preprocess import preprocess
 from utils import *
 
 from sklearn.model_selection import train_test_split
@@ -14,14 +13,13 @@ from catboost import CatBoostRegressor
 from lightgbm import LGBMRegressor
 from xgboost import XGBRegressor
 
+
 if __name__ == "__main__":
-    exps = [experiment1, experiment2, experiment3, experiment4,
-            experiment5, experiment6, experiment7, experiment8, experiment9]
-    exp_no = 0
+    exps, exps_dict, ensemble_dict, ensemble_df = preprocess()
     model_results = pd.DataFrame()
     for exp in exps:
-        exp_no += 1
-        df_x, df_y = get_exp_based_df(exp)
+        print(exp)
+        df_x, df_y = ensemble_df[exp]
         train_x, test_x, train_y, test_y = train_test_split(
             df_x, df_y, test_size=0.2, random_state=0)
         test_x, val_x, test_y, val_y = train_test_split(
@@ -39,9 +37,9 @@ if __name__ == "__main__":
 
         for algo in algos:
             model = algo()
-            model_name = type(model).__name__
-            if model_name == 'CatBoostRegressor':
+            if type(model).__name__ == 'CatBoostRegressor':
                 model = algo(**params)
+    #         print(type(model).__name__)
             model.fit(train_x, train_y)
 
             model_results_train = get_scores(
@@ -51,8 +49,7 @@ if __name__ == "__main__":
             data = {"Train": model_results_train,
                     "Val": model_results_val,
                     "Test": model_results_test}
-            temp = pd.DataFrame(data, index=[f'Exp_{exp_no}_{model_name}'])
+            temp = pd.DataFrame(data, index=[f'{exp}_{type(model).__name__}'])
             model_results = model_results.append(temp)
 
-    model_results.to_csv(
-        f'../../data/output/Critical_Point/critical_point_results.csv')
+    model_results.to_csv('../../data/output/Ensemble/ensemble_results.csv')
